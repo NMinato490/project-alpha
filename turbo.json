@@ -4,11 +4,14 @@
   "remoteCache": {
     "enabled": true
   },
+  "globalDependencies": [".env"],
+  "globalEnv": ["NEXT_PUBLIC_API_URL", "NEXT_PUBLIC_APP_NAME"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**", "!.next/dev/**"]
+      "outputs": [".next/**", "!.next/cache/**", "!.next/dev/**"],
+      "env": ["NEXT_PUBLIC_API_URL", "NEXT_PUBLIC_APP_NAME", "NEXT_PUBLIC_APP_TITLE"]
     },
     "lint": {
       "dependsOn": ["^lint"]
